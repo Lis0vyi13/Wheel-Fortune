@@ -6,8 +6,11 @@ const prizes = document.querySelectorAll(".sector");
 const prizesDegrees = [45, 90, 135, 180, 225, 270, 315, 360];
 const root = document.documentElement;
 const result = document.querySelector(".result");
+const preloader = document.querySelector(".preloader");
 let value = 0;
-
+window.addEventListener("load", function (e) {
+  preloader.classList.remove("active");
+});
 changeSpinWrapperSize();
 
 function changeSpinWrapperSize() {
