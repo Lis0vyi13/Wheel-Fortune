@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">
+        WHEEL OF FORTUNE
+        <div class="first-group">
+          <div
+            style="--left: 40px"
+            id="star"></div>
+          <div
+            style="--left: -15px"
+            id="star"></div>
+          <div
+            style="--left: 25px"
+            id="star"></div>
+        </div>
+        <div class="second-group">
+          <div
+            style="--left: -40px"
+            id="star"></div>
+          <div
+            style="--left: 15px"
+            id="star"></div>
+          <div
+            style="--left: -15px"
+            id="star"></div>
+        </div>
+      </h1>
+      <div id="wheel-wrapper">
+        <div id="wheel">
+          <div
+            class="sector"
+            data-prize="1000$"
+            style="--bg: #f93bb1; --deg: 1">
+            <span style="--bg: black">1000</span>
+          </div>
+
+          <div
+            class="sector"
+            data-prize="FENDER SQUIER SONIC STRATOCASTER HT LRL TORINO RED"
+            style="--deg: 2">
+            <div>
+              <img
+                src="icons/guitar.png"
+                alt="Fender Guitar" />
+            </div>
+          </div>
+          <div
+            class="sector"
+            data-prize="10000$"
+            style="--bg: #00abff; --deg: 3">
+            <span>10000</span>
+          </div>
+          <div
+            class="sector"
+            data-prize="VR Oculus Rift"
+            style="--deg: 4">
+            <div>
+              <img
+                src="icons/vr.png"
+                alt="VR" />
+            </div>
+          </div>
+          <div
+            class="sector"
+            data-prize="2000$"
+            style="--bg: #12e48b; --deg: 5">
+            <span>2000</span>
+          </div>
+          <div
+            class="sector"
+            data-prize="iPhone X"
+            style="--deg: 6">
+            <div>
+              <img
+                src="icons/iphone.png"
+                alt="Iphone" />
+            </div>
+          </div>
+          <div
+            class="sector"
+            data-prize="200$"
+            style="--bg: rgb(255, 60, 0); --deg: 7">
+            <span>200</span>
+          </div>
+          <div
+            class="sector"
+            data-prize="POCO X4 GT"
+            style="--deg: 8">
+            <div>
+              <img
+                src="icons/poco.png"
+                alt="Poco" />
+            </div>
+          </div>
+        </div>
+        <div id="spin-wrapper">
+          <div id="spin"></div>
+          <div id="glyph"></div>
+        </div>
+      </div>
+    </div>
+    <div class="result"></div>
+    <audio
+      src="../../../Linkin Park - No More Sorrow (dizer.net).mp3"
+      id="music"></audio>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,405 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:regular,700,900);
+
+:root {
+  --pink: #e2aafa;
+  --gray: #e4e3e3;
+  --anim: ;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("img/bg.jpg") no-repeat;
+  object-fit: cover;
+  background-size: cover;
+}
+body::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.container {
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.title {
+  text-transform: uppercase;
+  position: relative;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--gray);
+}
+@keyframes pulse {
+  0% {
+    scale: 1;
+    box-shadow: 0 0 10px purple;
+  }
+  50% {
+    scale: 0.7;
+    box-shadow: 0 0 10px purple;
+  }
+  100% {
+    scale: 1;
+    box-shadow: 0 0 10px purple;
+  }
+}
+
+#star {
+  width: 19px;
+  height: 25px;
+  background-color: #fff;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  animation: pulse 0.5s infinite;
+  position: relative;
+  left: var(--left);
+}
+.first-group,
+.second-group {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  gap: 30px;
+}
+.first-group {
+  display: flex;
+}
+#wheel-wrapper {
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+#wheel {
+  position: relative;
+  transition: transform 6s ease-in-out;
+}
+
+@media (min-width: 1px) {
+  .title {
+    font-size: 25px;
+  }
+  #wheel-wrapper {
+    border: 13px solid var(--pink);
+  }
+  #wheel {
+    width: 260px;
+    height: 260px;
+  }
+  #spin {
+    width: 100px;
+    height: 100px;
+  }
+  #glyph {
+    scale: 0.7;
+    top: 80%;
+    left: 38.1%;
+  }
+  .sector span {
+    font-size: 13px;
+  }
+  .sector:nth-child(even) div {
+    width: 50px;
+    height: 50px;
+  }
+  .sector:nth-child(even) div img {
+    height: 35px;
+  }
+  .first-group {
+    top: 50px;
+    left: -5px;
+  }
+  .second-group {
+    left: 235px;
+    top: 50px;
+  }
+}
+
+@media (min-width: 481px) {
+  #wheel-wrapper {
+    border: 15px solid var(--pink);
+  }
+  .title {
+    font-size: 30px;
+  }
+  #wheel {
+    width: 310px;
+    height: 310px;
+  }
+  #spin {
+    width: 120px;
+    height: 120px;
+  }
+
+  #glyph {
+    scale: 0.8;
+    left: 41.7%;
+    top: 86%;
+  }
+  .sector span {
+    font-size: 15px;
+  }
+  .sector:nth-child(even) div {
+    width: 60px;
+    height: 60px;
+  }
+  .sector:nth-child(even) div img {
+    height: 45px;
+  }
+  .first-group {
+    top: 50px;
+    left: 10px;
+  }
+  .second-group {
+    left: 265px;
+    top: 50px;
+  }
+}
+
+@media (min-width: 549px) {
+  .first-group {
+    top: -30px;
+    left: -100px;
+  }
+  .second-group {
+    left: unset;
+    right: -100px;
+    top: -30px;
+  }
+}
+
+@media (min-width: 768px) {
+  #wheel {
+    width: 350px;
+    height: 350px;
+  }
+  .title {
+    font-size: 37px;
+  }
+  #spin {
+    width: 150px;
+    height: 150px;
+  }
+  #glyph {
+    scale: 1;
+    left: 48.6%;
+    top: 93%;
+  }
+  .sector span {
+    font-size: 17px;
+  }
+
+  .sector:nth-child(even) div {
+    width: 80px;
+    height: 80px;
+  }
+  .sector:nth-child(even) div img {
+    height: 60px;
+  }
+}
+@media (min-width: 1200px) {
+  #wheel {
+    width: 400px;
+    height: 400px;
+  }
+  #glyph {
+    scale: 1;
+    left: 48.6%;
+  }
+  .title {
+    font-size: 45px;
+  }
+  .sector span {
+    font-size: 26px;
+  }
+}
+
+.sector {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  transform-origin: bottom right;
+  rotate: calc(45deg * var(--deg));
+  color: white;
+  display: flex;
+  user-select: none;
+  justify-content: center;
+  background-color: #fff;
+  align-items: center;
+  color: #333;
+  clip-path: polygon(0 0, 59% 0, 100% 100%, 0 59%);
+}
+
+.sector:nth-child(odd) {
+  background-color: var(--bg);
+  color: #fff;
+}
+
+.sector:nth-child(even) div {
+  border-radius: 50%;
+  rotate: calc(45deg * var(--deg));
+  position: relative;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.3);
+}
+.sector:nth-child(even) div img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sector span {
+  position: absolute;
+  top: 50%;
+  left: 49%;
+  transform: translate(-49%, -80%);
+  transform-origin: left top;
+  text-align: center;
+  text-shadow: 0px 0px 5px black;
+  rotate: -45deg;
+  font-weight: 700;
+}
+#spin-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#spin {
+  position: absolute;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  outline: 12px #333;
+  transform-origin: center center;
+  background: url("img/disk.png") no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  transition: transform 6s ease-in-out;
+  z-index: 2;
+  cursor: pointer;
+}
+#glyph {
+  position: absolute;
+  background: url("img/glyph.svg") no-repeat;
+  height: 108px;
+  transform-origin: center top;
+  width: 108px;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 3;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+.glyph-animation {
+  animation: shake 0.3s ease infinite;
+}
+@keyframes shake {
+  0% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(178deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(182deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+}
+#spin::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  border-radius: 50%;
+  top: 50%;
+  opacity: 0.3;
+  background-color: #333;
+  pointer-events: none;
+  width: 105%;
+  z-index: -5;
+  height: 105%;
+  transform: translate(-50%, -50%);
+}
+
+.result {
+  background-color: indigo;
+  border-radius: 5px;
+  max-width: 250px;
+  padding: 15px 25px;
+  text-align: center;
+  z-index: 5;
+  position: fixed;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  bottom: 60px;
+  color: #fff;
+  opacity: 0;
+  right: 70px;
+}
+#close {
+  color: #fff;
+  top: 3px;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  right: -10px;
+  position: absolute;
+}
+.result span {
+  color: greenyellow;
+  font-weight: bold;
+}
+
+.result::after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2.5px;
+  animation: var(--anim);
+}
+.active {
+  pointer-events: all;
+  opacity: 1;
+}
+@keyframes decreaseHeight {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+.pointer-events-none {
+  pointer-events: none;
+}
