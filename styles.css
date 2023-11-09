@@ -5,6 +5,12 @@
   --gray: #e4e3e3;
   --anim: ;
 }
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -114,11 +120,7 @@ body::after {
     width: 100px;
     height: 100px;
   }
-  #glyph {
-    scale: 0.7;
-    top: 80%;
-    left: 38.1%;
-  }
+
   .sector span {
     font-size: 13px;
   }
@@ -137,8 +139,25 @@ body::after {
     left: 235px;
     top: 50px;
   }
+  #glyph {
+    top: 73%;
+    left: 49.35%;
+  }
+  .result {
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
-
+@media (min-width: 360px) {
+  #wheel {
+    width: 310px;
+    height: 310px;
+  }
+  #glyph {
+    top: 70%;
+  }
+}
 @media (min-width: 481px) {
   #wheel-wrapper {
     border: 15px solid var(--pink);
@@ -146,20 +165,12 @@ body::after {
   .title {
     font-size: 30px;
   }
-  #wheel {
-    width: 310px;
-    height: 310px;
-  }
+
   #spin {
     width: 120px;
     height: 120px;
   }
 
-  #glyph {
-    scale: 0.8;
-    left: 41.7%;
-    top: 86%;
-  }
   .sector span {
     font-size: 15px;
   }
@@ -204,11 +215,7 @@ body::after {
     width: 150px;
     height: 150px;
   }
-  #glyph {
-    scale: 1;
-    left: 48.6%;
-    top: 93%;
-  }
+
   .sector span {
     font-size: 17px;
   }
@@ -220,6 +227,11 @@ body::after {
   .sector:nth-child(even) div img {
     height: 60px;
   }
+  .result {
+    left: unset;
+    right: 70px;
+    bottom: 60px;
+  }
 }
 @media (min-width: 1200px) {
   #wheel {
@@ -227,8 +239,8 @@ body::after {
     height: 400px;
   }
   #glyph {
-    scale: 1;
-    left: 48.6%;
+    top: 66%;
+    left: 49.6%;
   }
   .title {
     font-size: 45px;
@@ -308,6 +320,7 @@ body::after {
   position: absolute;
   background: url("img/glyph.svg") no-repeat;
   height: 108px;
+
   transform-origin: center top;
   width: 108px;
   pointer-events: none;
@@ -352,7 +365,8 @@ body::after {
 
 .result {
   background-color: indigo;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-size: 20px;
   max-width: 250px;
   padding: 15px 25px;
   text-align: center;
@@ -360,10 +374,8 @@ body::after {
   position: fixed;
   transition: opacity 0.3s ease;
   pointer-events: none;
-  bottom: 60px;
   color: #fff;
   opacity: 0;
-  right: 70px;
 }
 #close {
   color: #fff;
