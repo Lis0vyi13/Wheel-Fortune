@@ -7,6 +7,7 @@ const prizesDegrees = [45, 90, 135, 180, 225, 270, 315, 360];
 const root = document.documentElement;
 const result = document.querySelector(".result");
 const preloader = document.querySelector(".preloader");
+const audio = new Audio("audio/pushing-me-away.mp3");
 let value = 0;
 window.addEventListener("load", function (e) {
   preloader.classList.remove("active");
@@ -40,6 +41,7 @@ function getPrizeIndex(wheelDegree) {
 spin.addEventListener("click", function (e) {
   value += Math.ceil(Math.random() * 3600 * 2);
   rotateWheel(value);
+  audio.play();
   spin.classList.add("pointer-events-none");
 });
 
