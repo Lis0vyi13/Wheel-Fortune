@@ -7,7 +7,7 @@ const prizesDegrees = [45, 90, 135, 180, 225, 270, 315, 360];
 const root = document.documentElement;
 const result = document.querySelector(".result");
 const preloader = document.querySelector(".preloader");
-const audio = new Audio("audio/tick tock.mp3.mp3");
+const audio = new Audio("audio/tick-tock.mp3");
 let value = 0;
 window.addEventListener("load", function (e) {
   preloader.classList.remove("active");
